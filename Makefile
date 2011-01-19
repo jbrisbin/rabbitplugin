@@ -23,7 +23,6 @@ package: compile $(DEPS_EZ)
 	(cd $(DIST_DIR); zip -r $(PACKAGE).ez $(PACKAGE))
 
 install: package
-	rabbitmq-env
 	$(foreach DEP, $(DEPS_EZ), cp $(DEP) $(RABBITMQ_HOME)/plugins;)
 	cp $(DIST_DIR)/$(PACKAGE).ez $(RABBITMQ_HOME)/plugins
 
