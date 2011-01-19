@@ -1,0 +1,13 @@
+{variables, [{pluginid, "myplugin"}, {author, "Author <me@mydomain.com>"}]}.
+
+{file, "rebar", "{{pluginid}}/rebar"}.
+{chmod, 8#755, "{{pluginid}}/rebar"}.
+{file, "rebar.config", "{{pluginid}}/rebar.config"}.
+
+{template, "Makefile", "{{pluginid}}/Makefile"}.
+
+{template, "plugin.app.src", "{{pluginid}}/src/{{pluginid}}.app.src"}.
+{template, "plugin.hrl", "{{pluginid}}/include/{{pluginid}}.hrl"}.
+{template, "plugin.erl", "{{pluginid}}/src/{{pluginid}}.erl"}.
+{template, "plugin_app.erl", "{{pluginid}}/src/{{pluginid}}_app.erl"}.
+{template, "plugin_sup.erl", "{{pluginid}}/src/{{pluginid}}_sup.erl"}.
