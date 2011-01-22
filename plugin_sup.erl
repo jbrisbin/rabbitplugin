@@ -41,23 +41,14 @@ start_link() ->
 %%          {error, Reason}
 %% --------------------------------------------------------------------
 init([]) ->
-	Workers = case application:get_env({{pluginid}}) of
-							{ok, W} -> make_worker_configs(W);
-							_ -> 
-								io:format("no configs found...", []),
-								[]
-						end,
-	{ok, { {one_for_one, 3, 10}, Workers} }.
-
-make_worker_configs(Configs) ->
-	lists:foldl(fun (Config, Acc) ->
-		case Config of
-			{Name, C} ->
-				[{Name, { {{pluginid}}, start_link, [Name, C] },
-				permanent,
-				10000,
-				worker,
-				[ {{pluginid}} ]
-				} | Acc]
-		end
-	end, [], Configs).
+	Config = case application:get_env({{pluginid}}) of
+		{ok, C} -> [C];
+		_ -> []
+	end,
+	{ok, {{one_for_one, 3, 10}, [{
+		{{pluginid}}, { {{pluginid}}, start_link, Config },
+		permanent,
+		10000,
+		worker,
+		[ {{pluginid}} ]
+	}]}}.

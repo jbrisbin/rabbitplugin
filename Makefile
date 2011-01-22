@@ -5,6 +5,7 @@ INCLUDE_DIRS=include
 DEPS_DIR=deps
 DEPS ?= amqp_client rabbit_common
 DEPS_EZ=$(foreach DEP, $(DEPS), $(DEPS_DIR)/$(DEP).ez)
+RABBITMQ_HOME ?= .
 
 all: compile
 
