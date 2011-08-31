@@ -28,10 +28,10 @@ When you're ready to start using it, use a standard rebar project create command
 		./rebar get-deps
 		==> my_cool_plugin (get-deps)
 		Pulling rabbit_common from {git,"git://github.com/jbrisbin/rabbit_common.git",
-		                                "HEAD"}
+		                                {tag, "rabbitmq_2.6.0"}}
 		Cloning into rabbit_common...
 		Pulling amqp_client from {git,"git://github.com/jbrisbin/amqp_client.git",
-		                              "HEAD"}
+		                              {tag, "rabbitmq_2.6.0"}}
 		Cloning into amqp_client...
 		==> rabbit_common (get-deps)
 		==> amqp_client (get-deps)
