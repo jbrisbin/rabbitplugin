@@ -53,5 +53,5 @@ in the provided Makefile will handle zipping those dependencies into `.ez` files
 To install your plugin, set the `RABBITMQ_HOME` environment variable for you system such that 
 the installer can put your .ez files into `$RABBITMQ_HOME/plugins`:
 
-		export RABBITMQ_HOME=/my/rabbitmq_home/2.2.0
+		export RABBITMQ_HOME=/my/rabbitmq_home/2.6.0
 		make install

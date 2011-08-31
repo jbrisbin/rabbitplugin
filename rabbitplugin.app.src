@@ -1,7 +1,7 @@
 {application, {{pluginid}},
  [
-  {description, ""},
-  {vsn, "1"},
+  {description, "{{description}}"},
+  {vsn, git},
   {registered, []},
   {applications, [
                   kernel,

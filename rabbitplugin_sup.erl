@@ -36,7 +36,7 @@ start_link() ->
 %% ====================================================================
 %% --------------------------------------------------------------------
 %% Func: init/1
-%% Returns: {ok,  {SupFlags,  [ChildSpec]}} |
+%% Returns: {ok,  {SupFlags,  [ChildSpec]} } |
 %%          ignore                          |
 %%          {error, Reason}
 %% --------------------------------------------------------------------
@@ -45,10 +45,10 @@ init([]) ->
 		{ok, C} -> [C];
 		_ -> []
 	end,
-	{ok, {{one_for_one, 3, 10}, [{
+	{ok, { {one_for_one, 3, 10}, [{
 		{{pluginid}}, { {{pluginid}}, start_link, Config },
 		permanent,
 		10000,
 		worker,
 		[ {{pluginid}} ]
-	}]}}.
+	}]} }.
